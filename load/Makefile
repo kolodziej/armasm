@@ -1,0 +1,12 @@
+NAME=load01
+
+all: $(NAME)
+
+$(NAME): $(NAME).o
+	gcc $(NAME).o -o $(NAME).bin
+
+$(NAME).o: $(NAME).s
+	as -o $(NAME).o $(NAME).s
+
+clean:
+	rm -f $(NAME).o $(NAME)
